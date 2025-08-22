@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { ChevronRight } from "lucide-react";
 import Navbar from "./components/Navbar";
+import SolutionCard from "./components/SolutionCard";
 
 function App() {
   return (
@@ -75,25 +76,48 @@ function App() {
           <img src="/logo-credibility.png" alt="picture with logos" />
         </Container>
       </Container>
-      <Container maxW={"full"} bg={"#ffffff"} py={14}>
+      <Container maxW={"full"} bg={"#ffffff"} py={6}>
         <Stack minH={"100vh"}>
           <Flex alignItems={"center"} justifyContent={"center"} pt={12} pb={3}>
             <Text
               fontWeight={"semibold"}
-              textStyle={"5xl"}
+              textStyle={"4xl"}
               textAlign={"center"}
               color={"black"}
             >
               Empowering entreprenuers to increase their income
             </Text>
           </Flex>
-          <Flex alignItems={"center"} justifyContent={"center"} pb={2}>
+          <Flex alignItems={"center"} justifyContent={"center"} pb={12}>
             <Flex wrap={"wrap"} maxW={"700px"}>
               <Text textStyle={"lg"} textAlign={"center"} color={"gray.500"}>
                 We've simplified product and growth analytics to boost user
                 conversion, engagement, and retention
               </Text>
             </Flex>
+          </Flex>
+          <Flex gap={4} alignItems={"center"} justifyContent={"center"}>
+            <SolutionCard
+              source={"/solution-bar-screen.png"}
+              footerHeading={"Cash Flow Analytics"}
+              footerSubHeading={
+                "Generate and send professional invoices to clients for quicker payments"
+              }
+            />
+            <SolutionCard
+              source={"/solution-chart-screen.png"}
+              footerHeading={"Multiple Account Sync"}
+              footerSubHeading={
+                "Open multi-currency business accounts to unlock global revenue streams"
+              }
+            />
+            <SolutionCard
+              source={"/solution-screen-one.png"}
+              footerHeading={"Automated Accounting"}
+              footerSubHeading={
+                "Easily track expenses and manage your budget with confidence."
+              }
+            />
           </Flex>
         </Stack>
       </Container>

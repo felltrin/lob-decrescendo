@@ -6,10 +6,12 @@ import {
   Button,
   Icon,
   Image,
+  Card,
 } from "@chakra-ui/react";
 import { ChevronRight } from "lucide-react";
 import Navbar from "./components/Navbar";
 import SolutionCard from "./components/SolutionCard";
+import Demo from "./components/Demo";
 
 function App() {
   return (
@@ -118,6 +120,24 @@ function App() {
                 "Easily track expenses and manage your budget with confidence."
               }
             />
+          </Flex>
+          <Flex alignItems={"center"} justifyContent={"center"} pt={32} pb={3}>
+            <Text
+              fontWeight={"semibold"}
+              textStyle={"4xl"}
+              textAlign={"center"}
+              color={"black"}
+            >
+              Innovative tools for powerful analytics and insights
+            </Text>
+          </Flex>
+          <Flex alignItems={"center"} justifyContent={"center"} pb={12}>
+            <Flex wrap={"wrap"} maxW={"700px"}>
+              <Text textStyle={"lg"} textAlign={"center"} color={"gray.500"}>
+                Simplifed analytics to increase user conversion, engagement, and
+                retention
+              </Text>
+            </Flex>
           </Flex>
         </Stack>
       </Container>

@@ -17,20 +17,24 @@ import {
   Copy,
   Scissors,
 } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from "recharts";
 
 const Demo = () => {
   const chart = useChart({
     data: [
-      { allocation: 275, type: "Mon" },
-      { allocation: 350, type: "Tue" },
-      { allocation: 45, type: "Wed" },
-      { allocation: 280, type: "Thur" },
-      { allocation: 380, type: "Fri" },
-      { allocation: 250, type: "Sat" },
-      { allocation: 140, type: "Sun" },
+      { sales: 275, expenses: 23, profit: 30, type: "Mon" },
+      { sales: 275, expenses: 23, profit: 30, type: "Tue" },
+      { sales: 275, expenses: 23, profit: 30, type: "Wed" },
+      { sales: 275, expenses: 23, profit: 30, type: "Thur" },
+      { sales: 275, expenses: 23, profit: 30, type: "Fri" },
+      { sales: 275, expenses: 23, profit: 30, type: "Sat" },
+      { sales: 275, expenses: 23, profit: 30, type: "Sun" },
     ],
-    series: [{ name: "allocation", color: "teal.solid" }],
+    series: [
+      { name: "sales", color: "teal.solid", stackId: "a" },
+      { name: "expenses", color: "red.solid", stackId: "a" },
+      { name: "profit", color: "orange.fg", stackId: "a" },
+    ],
   });
 
   return (
@@ -105,6 +109,7 @@ const Demo = () => {
                 axisLine={false}
                 tickLine={false}
                 dataKey={chart.key("type")}
+                tick={{ dy: 10 }}
               />
               <YAxis
                 axisLine={false}
@@ -112,13 +117,20 @@ const Demo = () => {
                 domain={[0, 400]}
                 tickFormatter={(value) => `${value}`}
               />
+              <Legend
+                align="right"
+                wrapperStyle={{ paddingTop: 30 }}
+                iconType="circle"
+                iconSize={8}
+              />
               {chart.series.map((item) => (
                 <Bar
                   key={item.name}
                   isAnimationActive={false}
                   dataKey={chart.key(item.name)}
                   fill={chart.color(item.color)}
-                  radius={[10, 10, 0, 0]}
+                  // radius={[10, 10, 0, 0]}
+                  stackId={item.stackId}
                 />
               ))}
             </BarChart>

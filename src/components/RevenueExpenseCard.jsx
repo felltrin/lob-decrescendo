@@ -19,8 +19,31 @@ import {
   Copy,
   Scissors,
 } from "lucide-react";
+import { Chart, useChart } from "@chakra-ui/charts";
+import {
+  CartesianGrid,
+  Line,
+  LineChart,
+  ReferenceLine,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const RevenueExpenseCard = () => {
+  const chart = useChart({
+    data: [
+      { sale: 0, month: "Mon" },
+      { sale: 95, month: "Tue" },
+      { sale: 87, month: "Wed" },
+      { sale: 88, month: "Thur" },
+      { sale: 65, month: "Fri" },
+      { sale: 90, month: "Sat" },
+      { sale: 90, month: "Sun" },
+    ],
+    series: [{ name: "sale", color: "teal.solid" }],
+  });
+
   return (
     <Card.Root
       bg={"#f6faff"}
@@ -66,7 +89,7 @@ const RevenueExpenseCard = () => {
                     </Menu.Item>
                     <Menu.Item>
                       <ClipboardPaste />
-                      <Box>Pase</Box>
+                      <Box>Paste</Box>
                       <Menu.ItemCommand>⌘V</Menu.ItemCommand>
                     </Menu.Item>
                   </Menu.Content>
@@ -76,7 +99,7 @@ const RevenueExpenseCard = () => {
           </Flex>
         </Card.Header>
         <Card.Body>
-          <Flex gap={12}>
+          <Flex gap={12} mb={4}>
             <Flex alignItems={"center"} gap={3}>
               <IconButton
                 bg={"#d5e7ec71"}
@@ -102,6 +125,37 @@ const RevenueExpenseCard = () => {
               </Text>
             </Flex>
           </Flex>
+          <Chart.Root maxH={"sm"} chart={chart}>
+            <LineChart data={chart.data} margin={{ left: 20, right: 40 }}>
+              <CartesianGrid
+                stroke={chart.color("#e4e8edff")}
+                horizontal={false}
+              />
+              <XAxis
+                axisLine={false}
+                dataKey={chart.key("month")}
+                tickLine={false}
+                stroke={chart.color("#e4e8edff")}
+              />
+              <ReferenceLine y={0} stroke={chart.color("#e4e8edff")} />
+              <Tooltip
+                animationDuration={100}
+                cursor={false}
+                content={<Chart.Tooltip />}
+              />
+              {chart.series.map((item) => (
+                <Line
+                  key={item.name}
+                  isAnimationActive={false}
+                  dataKey={chart.key(item.name)}
+                  stroke={chart.color(item.color)}
+                  strokeWidth={2}
+                  fill={chart.color("white")}
+                  opacity={chart.getSeriesOpacity(item.name)}
+                />
+              ))}
+            </LineChart>
+          </Chart.Root>
         </Card.Body>
       </Card.Root>
       <Card.Footer alignItems={"center"} justifyContent={"center"}>

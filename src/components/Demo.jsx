@@ -17,37 +17,45 @@ import {
   Copy,
   Scissors,
 } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const Demo = () => {
   const chart = useChart({
     data: [
-      { sales: 275, expenses: 23, profit: 30, type: "Mon" },
-      { sales: 275, expenses: 23, profit: 30, type: "Tue" },
-      { sales: 275, expenses: 23, profit: 30, type: "Wed" },
-      { sales: 275, expenses: 23, profit: 30, type: "Thur" },
-      { sales: 275, expenses: 23, profit: 30, type: "Fri" },
-      { sales: 275, expenses: 23, profit: 30, type: "Sat" },
+      { sales: 175, expenses: 123, profit: 30, type: "Mon" },
+      { sales: 175, expenses: 73, profit: 80, type: "Tue" },
+      { sales: 125, expenses: 123, profit: 80, type: "Wed" },
+      { sales: 175, expenses: 123, profit: 30, type: "Thur" },
+      { sales: 175, expenses: 123, profit: 30, type: "Fri" },
+      { sales: 175, expenses: 123, profit: 30, type: "Sat" },
       { sales: 275, expenses: 23, profit: 30, type: "Sun" },
     ],
     series: [
-      { name: "sales", color: "teal.solid", stackId: "a" },
-      { name: "expenses", color: "red.solid", stackId: "a" },
+      { name: "sales", color: "#328299", stackId: "a" },
       { name: "profit", color: "orange.fg", stackId: "a" },
+      { name: "expenses", color: "#B8EB9E", stackId: "a" },
     ],
   });
 
   return (
     <Card.Root
       bg={"#f6faff"}
-      color={"black"}
       variant={"subtle"}
       rounded={"xl"}
       minW={"2/5"}
+      border={"2px solid"}
+      borderColor={"gray.100"}
     >
       <Card.Root
         bg={"#ffffff"}
-        color={"black"}
         rounded={"md"}
         m={6}
         variant={"subtle"}
@@ -56,7 +64,9 @@ const Demo = () => {
       >
         <Card.Header>
           <Flex alignItems={"center"} justifyContent={"space-between"}>
-            <Card.Title fontWeight={"semibold"}>Statistics</Card.Title>
+            <Card.Title fontWeight={"semibold"} color={"black"}>
+              Statistics
+            </Card.Title>
             <Menu.Root>
               <Menu.Trigger asChild>
                 <Button
@@ -117,22 +127,32 @@ const Demo = () => {
                 domain={[0, 400]}
                 tickFormatter={(value) => `${value}`}
               />
-              <Legend
-                align="right"
-                wrapperStyle={{ paddingTop: 30 }}
-                iconType="circle"
-                iconSize={8}
+              <Tooltip
+                cursor={{ fill: "none" }}
+                animationDuration={100}
+                content={<Chart.Tooltip />}
               />
-              {chart.series.map((item) => (
-                <Bar
-                  key={item.name}
-                  isAnimationActive={false}
-                  dataKey={chart.key(item.name)}
-                  fill={chart.color(item.color)}
-                  // radius={[10, 10, 0, 0]}
-                  stackId={item.stackId}
-                />
-              ))}
+              <Legend content={<Chart.Legend />} align="right" />
+              {chart.series.map((item, index) =>
+                index !== chart.series.length - 1 ? (
+                  <Bar
+                    key={item.name}
+                    isAnimationActive={false}
+                    dataKey={chart.key(item.name)}
+                    fill={chart.color(item.color)}
+                    stackId={item.stackId}
+                  />
+                ) : (
+                  <Bar
+                    key={item.name}
+                    isAnimationActive={false}
+                    dataKey={chart.key(item.name)}
+                    fill={chart.color(item.color)}
+                    radius={[10, 10, 0, 0]}
+                    stackId={item.stackId}
+                  />
+                )
+              )}
             </BarChart>
           </Chart.Root>
         </Card.Body>

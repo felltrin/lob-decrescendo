@@ -6,7 +6,6 @@ import {
   Button,
   Icon,
   Image,
-  Card,
 } from "@chakra-ui/react";
 import { ChevronRight } from "lucide-react";
 import Navbar from "./components/Navbar";
@@ -132,12 +131,16 @@ function App() {
             </Text>
           </Flex>
           <Flex alignItems={"center"} justifyContent={"center"} pb={12}>
-            <Flex wrap={"wrap"} maxW={"700px"}>
+            <Flex wrap={"wrap"} maxW={"600px"}>
               <Text textStyle={"lg"} textAlign={"center"} color={"gray.500"}>
                 Simplifed analytics to increase user conversion, engagement, and
                 retention
               </Text>
             </Flex>
+          </Flex>
+          <Flex alignItems={"center"} justifyContent={"center"} gap={3}>
+            <Demo />
+            {/* <Demo /> */}
           </Flex>
         </Stack>
       </Container>

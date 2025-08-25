@@ -11,6 +11,8 @@ import { ChevronRight } from "lucide-react";
 import Navbar from "./components/Navbar";
 import SolutionCard from "./components/SolutionCard";
 import Demo from "./components/Demo";
+import LiveBudgetCard from "./components/LiveBudgetCard";
+import RevenueExpenseCard from "./components/RevenueExpenseCard";
 
 function App() {
   return (
@@ -139,8 +141,8 @@ function App() {
             </Flex>
           </Flex>
           <Flex alignItems={"center"} justifyContent={"center"} gap={3}>
-            <Demo />
-            {/* <Demo /> */}
+            <LiveBudgetCard />
+            <RevenueExpenseCard />
           </Flex>
         </Stack>
       </Container>

@@ -147,8 +147,8 @@ function App() {
           </Flex>
           <Flex alignItems={"center"} justifyContent={"center"} gap={3}>
             <SalesCard />
-            <SalesCard />
-            <SalesCard />
+            {/* <SalesCard />
+            <SalesCard /> */}
           </Flex>
         </Stack>
       </Container>

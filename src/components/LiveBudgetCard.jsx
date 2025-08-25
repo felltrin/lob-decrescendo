@@ -50,7 +50,7 @@ const LiveBudgetCard = () => {
       bg={"#f6faff"}
       variant={"subtle"}
       rounded={"xl"}
-      minW={"2/5"}
+      minW={"1/3"}
       border={"2px solid"}
       borderColor={"gray.100"}
     >
@@ -109,7 +109,7 @@ const LiveBudgetCard = () => {
         </Card.Header>
         <Card.Body pl={0}>
           <Chart.Root maxH="xs" chart={chart}>
-            <BarChart data={chart.data} barSize={20}>
+            <BarChart data={chart.data} barSize={15}>
               <CartesianGrid
                 stroke={chart.color("border.muted")}
                 vertical={false}

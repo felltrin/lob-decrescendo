@@ -34,16 +34,16 @@ const RevenueExpenseCard = () => {
   const chart = useChart({
     data: [
       { revenue: 0, expenses: 0, month: "Mon" },
-      { revenue: 95, expenses: 5, month: "Tue" },
-      { revenue: 87, expenses: 15, month: "Wed" },
+      { revenue: 15, expenses: 5, month: "Tue" },
+      { revenue: 27, expenses: 15, month: "Wed" },
       { revenue: 88, expenses: 30, month: "Thur" },
-      { revenue: 65, expenses: 62, month: "Fri" },
+      { revenue: 25, expenses: 62, month: "Fri" },
       { revenue: 90, expenses: 25, month: "Sat" },
       { revenue: 90, expenses: 6, month: "Sun" },
     ],
     series: [
-      { name: "revenue", color: "teal.solid" },
-      { name: "expenses", color: "green.500" },
+      { name: "revenue", color: "#328299" },
+      { name: "expenses", color: "#B8EB9E" },
     ],
   });
 
@@ -66,10 +66,18 @@ const RevenueExpenseCard = () => {
       >
         <Card.Header>
           <Flex alignItems={"center"} justifyContent={"space-between"}>
-            <Card.Title color={"black"}>Analytics</Card.Title>
+            <Card.Title color={"black"} fontWeight={"semibold"}>
+              Analytics
+            </Card.Title>
             <Menu.Root>
               <Menu.Trigger asChild>
-                <Button>
+                <Button
+                  variant="outline"
+                  color={"black"}
+                  _hover={{ color: "white" }}
+                  rounded={"xl"}
+                  borderColor={"gray.200"}
+                >
                   <CalendarDays />
                   19 Aug - 25 Aug
                   <Icon>
@@ -80,19 +88,19 @@ const RevenueExpenseCard = () => {
               <Portal>
                 <Menu.Positioner>
                   <Menu.Content>
-                    <Menu.Item>
-                      <Scissors />
-                      <Box>Cut</Box>
+                    <Menu.Item value="cut">
+                      <Scissors size={16} />
+                      <Box flex="1">Cut</Box>
                       <Menu.ItemCommand>⌘X</Menu.ItemCommand>
                     </Menu.Item>
-                    <Menu.Item>
-                      <Copy />
-                      <Box>Copy</Box>
+                    <Menu.Item value="copy">
+                      <Copy size={16} />
+                      <Box flex="1">Copy</Box>
                       <Menu.ItemCommand>⌘C</Menu.ItemCommand>
                     </Menu.Item>
-                    <Menu.Item>
-                      <ClipboardPaste />
-                      <Box>Paste</Box>
+                    <Menu.Item value="paste">
+                      <ClipboardPaste size={16} />
+                      <Box flex="1">Paste</Box>
                       <Menu.ItemCommand>⌘V</Menu.ItemCommand>
                     </Menu.Item>
                   </Menu.Content>
@@ -131,7 +139,7 @@ const RevenueExpenseCard = () => {
           <Chart.Root maxH={"xs"} h={"265px"} chart={chart}>
             <AreaChart
               data={chart.data}
-              margin={{ left: 20, right: 40 }}
+              margin={{ left: 15, right: 15 }}
               height={"100px"}
             >
               <CartesianGrid
@@ -158,7 +166,7 @@ const RevenueExpenseCard = () => {
                     stroke="none"
                     fill={chart.color(item.color)}
                     color="black"
-                    opacity={"0.3"}
+                    opacity={"0.2"}
                   />
                   <Line
                     key={item.name}

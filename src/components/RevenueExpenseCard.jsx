@@ -21,27 +21,30 @@ import {
 } from "lucide-react";
 import { Chart, useChart } from "@chakra-ui/charts";
 import {
+  Area,
+  AreaChart,
   CartesianGrid,
   Line,
-  LineChart,
   ReferenceLine,
   Tooltip,
   XAxis,
-  YAxis,
 } from "recharts";
 
 const RevenueExpenseCard = () => {
   const chart = useChart({
     data: [
-      { sale: 0, month: "Mon" },
-      { sale: 95, month: "Tue" },
-      { sale: 87, month: "Wed" },
-      { sale: 88, month: "Thur" },
-      { sale: 65, month: "Fri" },
-      { sale: 90, month: "Sat" },
-      { sale: 90, month: "Sun" },
+      { revenue: 0, expenses: 0, month: "Mon" },
+      { revenue: 95, expenses: 5, month: "Tue" },
+      { revenue: 87, expenses: 15, month: "Wed" },
+      { revenue: 88, expenses: 30, month: "Thur" },
+      { revenue: 65, expenses: 62, month: "Fri" },
+      { revenue: 90, expenses: 25, month: "Sat" },
+      { revenue: 90, expenses: 6, month: "Sun" },
     ],
-    series: [{ name: "sale", color: "teal.solid" }],
+    series: [
+      { name: "revenue", color: "teal.solid" },
+      { name: "expenses", color: "green.500" },
+    ],
   });
 
   return (
@@ -125,8 +128,12 @@ const RevenueExpenseCard = () => {
               </Text>
             </Flex>
           </Flex>
-          <Chart.Root maxH={"sm"} chart={chart}>
-            <LineChart data={chart.data} margin={{ left: 20, right: 40 }}>
+          <Chart.Root maxH={"xs"} h={"265px"} chart={chart}>
+            <AreaChart
+              data={chart.data}
+              margin={{ left: 20, right: 40 }}
+              height={"100px"}
+            >
               <CartesianGrid
                 stroke={chart.color("#e4e8edff")}
                 horizontal={false}
@@ -144,17 +151,27 @@ const RevenueExpenseCard = () => {
                 content={<Chart.Tooltip />}
               />
               {chart.series.map((item) => (
-                <Line
-                  key={item.name}
-                  isAnimationActive={false}
-                  dataKey={chart.key(item.name)}
-                  stroke={chart.color(item.color)}
-                  strokeWidth={2}
-                  fill={chart.color("white")}
-                  opacity={chart.getSeriesOpacity(item.name)}
-                />
+                <>
+                  <Area
+                    type={"linear"}
+                    dataKey={chart.key(item.name)}
+                    stroke="none"
+                    fill={chart.color(item.color)}
+                    color="black"
+                    opacity={"0.3"}
+                  />
+                  <Line
+                    key={item.name}
+                    isAnimationActive={false}
+                    dataKey={chart.key(item.name)}
+                    stroke={chart.color(item.color)}
+                    strokeWidth={2}
+                    fill={chart.color("white")}
+                    opacity={chart.getSeriesOpacity(item.name)}
+                  />
+                </>
               ))}
-            </LineChart>
+            </AreaChart>
           </Chart.Root>
         </Card.Body>
       </Card.Root>

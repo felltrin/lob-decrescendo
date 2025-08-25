@@ -13,6 +13,7 @@ import SolutionCard from "./components/SolutionCard";
 import Demo from "./components/Demo";
 import LiveBudgetCard from "./components/LiveBudgetCard";
 import RevenueExpenseCard from "./components/RevenueExpenseCard";
+import SalesCard from "./components/SalesCard";
 
 function App() {
   return (
@@ -140,9 +141,14 @@ function App() {
               </Text>
             </Flex>
           </Flex>
-          <Flex alignItems={"center"} justifyContent={"center"} gap={3}>
+          <Flex alignItems={"center"} justifyContent={"center"} gap={3} mb={1}>
             <LiveBudgetCard />
             <RevenueExpenseCard />
+          </Flex>
+          <Flex alignItems={"center"} justifyContent={"center"} gap={3}>
+            <SalesCard />
+            {/* <SalesCard />
+            <SalesCard /> */}
           </Flex>
         </Stack>
       </Container>

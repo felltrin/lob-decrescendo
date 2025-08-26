@@ -16,6 +16,7 @@ import RevenueExpenseCard from "./components/RevenueExpenseCard";
 import SalesCard from "./components/SalesCard";
 import PersonalizeCard from "./components/PersonalizeCard";
 import ObjectivePlanningCard from "./components/ObjectivePlanningCard";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -154,6 +155,7 @@ function App() {
           </Flex>
         </Stack>
       </Container>
+      <Footer />
     </>
   );
 }

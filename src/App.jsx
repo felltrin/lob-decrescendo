@@ -17,6 +17,7 @@ import SalesCard from "./components/SalesCard";
 import PersonalizeCard from "./components/PersonalizeCard";
 import ObjectivePlanningCard from "./components/ObjectivePlanningCard";
 import Footer from "./components/Footer";
+import MakesUnique from "./components/MakesUnique";
 
 function App() {
   return (
@@ -154,6 +155,7 @@ function App() {
             <ObjectivePlanningCard />
           </Flex>
         </Stack>
+        <MakesUnique />
       </Container>
       <Footer />
     </>

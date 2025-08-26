@@ -53,7 +53,7 @@ const RevenueExpenseCard = () => {
       variant={"subtle"}
       border={"2px solid"}
       borderColor={"gray.100"}
-      minW={"1/3"}
+      minW={"xl"}
       rounded={"xl"}
     >
       <Card.Root

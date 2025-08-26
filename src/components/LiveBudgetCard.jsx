@@ -50,7 +50,7 @@ const LiveBudgetCard = () => {
       bg={"#f6faff"}
       variant={"subtle"}
       rounded={"xl"}
-      minW={"1/3"}
+      minW={"2/5"}
       border={"2px solid"}
       borderColor={"gray.100"}
     >

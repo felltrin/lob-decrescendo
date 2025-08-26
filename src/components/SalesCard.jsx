@@ -19,7 +19,7 @@ const SalesCard = () => {
       borderColor={"gray.100"}
       rounded={"xl"}
       minW={"sm"}
-      minH={"xs"}
+      minH={"md"}
     >
       <Card.Header>
         <Flex alignItems={"center"} justifyContent={"space-between"}>

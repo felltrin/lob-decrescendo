@@ -15,6 +15,8 @@ import LiveBudgetCard from "./components/LiveBudgetCard";
 import RevenueExpenseCard from "./components/RevenueExpenseCard";
 import SalesCard from "./components/SalesCard";
 import PersonalizeCard from "./components/PersonalizeCard";
+import TotalSalesCard from "./components/TotalSalesCard";
+import ObjectivePlanningCard from "./components/ObjectivePlanningCard";
 
 function App() {
   return (
@@ -149,6 +151,7 @@ function App() {
           <Flex alignItems={"center"} justifyContent={"center"} gap={3}>
             <SalesCard />
             <PersonalizeCard />
+            <ObjectivePlanningCard />
           </Flex>
         </Stack>
       </Container>

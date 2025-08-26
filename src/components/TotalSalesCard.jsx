@@ -1,7 +1,7 @@
 import { Card, Flex, IconButton, Stack, Text, Theme } from "@chakra-ui/react";
-import { DollarSign } from "lucide-react";
+import { ChartColumnBig } from "lucide-react";
 
-const TotalProfitCard = () => {
+const TotalSalesCard = () => {
   return (
     <Theme appearance="light">
       <Card.Root border={"1px solid"} borderColor={"gray.200"} minW={"250px"}>
@@ -9,10 +9,10 @@ const TotalProfitCard = () => {
           <Flex alignItems={"center"} justifyContent={"space-between"}>
             <Stack>
               <Text textStyle={"sm"} color={"gray.400"}>
-                Total Profit
+                Total Sales
               </Text>
               <Text textStyle={"3xl"} fontWeight={"semibold"}>
-                $14.500
+                26.800K
               </Text>
             </Stack>
             <IconButton
@@ -21,7 +21,7 @@ const TotalProfitCard = () => {
               rounded={"3xl"}
               pointerEvents={"none"}
             >
-              <DollarSign color={"#B8EB9E"} />
+              <ChartColumnBig color={"#B8EB9E"} />
             </IconButton>
           </Flex>
         </Card.Body>
@@ -30,4 +30,4 @@ const TotalProfitCard = () => {
   );
 };
 
-export default TotalProfitCard;
+export default TotalSalesCard;

@@ -12,6 +12,7 @@ const DebitCardTemp = () => {
         overflow={"hidden"}
         bg={"#328299"}
         minW={"xs"}
+        border={"none"}
       >
         <Circle
           style={{

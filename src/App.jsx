@@ -8,7 +8,7 @@ import {
   Image,
   Theme,
 } from "@chakra-ui/react";
-import { ChevronRight, Star } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Navbar from "./components/Navbar";
 import SolutionCard from "./components/SolutionCard";
 import LiveBudgetCard from "./components/LiveBudgetCard";

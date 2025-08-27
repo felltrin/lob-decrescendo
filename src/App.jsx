@@ -6,8 +6,10 @@ import {
   Button,
   Icon,
   Image,
+  Theme,
+  Card,
 } from "@chakra-ui/react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Star } from "lucide-react";
 import Navbar from "./components/Navbar";
 import SolutionCard from "./components/SolutionCard";
 import Demo from "./components/Demo";
@@ -16,6 +18,9 @@ import RevenueExpenseCard from "./components/RevenueExpenseCard";
 import SalesCard from "./components/SalesCard";
 import PersonalizeCard from "./components/PersonalizeCard";
 import ObjectivePlanningCard from "./components/ObjectivePlanningCard";
+import Footer from "./components/Footer";
+import MakesUnique from "./components/MakesUnique";
+import SubscriptionCard from "./components/SubscriptionCard";
 
 function App() {
   return (
@@ -83,7 +88,7 @@ function App() {
         </Container>
       </Container>
       <Container maxW={"full"} bg={"#ffffff"} py={6}>
-        <Stack minH={"100vh"}>
+        <Stack minH={"100vh"} pb={28}>
           <Flex alignItems={"center"} justifyContent={"center"} pt={12} pb={3}>
             <Text
               fontWeight={"semibold"}
@@ -153,7 +158,9 @@ function App() {
             <ObjectivePlanningCard />
           </Flex>
         </Stack>
+        <MakesUnique />
       </Container>
+      <Footer />
     </>
   );
 }

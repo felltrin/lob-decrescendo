@@ -12,10 +12,10 @@ import { FaGoogle, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <Theme appearance="light">
-      <Container maxW={"5/6"} bg={"#fff"} pt={36}>
+      <Container maxW={"5/6"} bg={"#fff"}>
         <Flex alignItems={"start"} justifyContent={"space-between"}>
-          <Flex>
-            <Stack minH={"fill"} alignItems={"baseline"} py={6}>
+          <Flex pt={8}>
+            <Stack minH={"fill"} alignItems={"baseline"} py={6} gap={6}>
               <Flex alignItems={"center"} justifyContent={"center"} gap={3}>
                 <img
                   src="/logo-for-dashvibe.png"
@@ -49,7 +49,7 @@ const Footer = () => {
             </Stack>
           </Flex>
 
-          <Flex gap={182}>
+          <Flex gap={182} pt={16}>
             <Stack minH={"fill"} alignItems={"baseline"} gap={2}>
               <Text textStyle={"sm"} color={"gray.400"}>
                 Resources

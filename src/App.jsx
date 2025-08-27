@@ -21,6 +21,7 @@ import ObjectivePlanningCard from "./components/ObjectivePlanningCard";
 import Footer from "./components/Footer";
 import MakesUnique from "./components/MakesUnique";
 import SubscriptionSection from "./components/SubscriptionSection";
+import HearFromUsers from "./components/HearFromUsers";
 
 function App() {
   return (
@@ -161,6 +162,8 @@ function App() {
         <MakesUnique />
       </Container>
       <SubscriptionSection />
+      <HearFromUsers />
+
       <Footer />
     </>
   );

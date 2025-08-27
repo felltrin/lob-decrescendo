@@ -17,7 +17,7 @@ const MakesUnique = () => {
 
   return (
     <Theme appearance="light">
-      <Stack alignItems={"center"}>
+      <Stack alignItems={"center"} minH={"125vh"}>
         <Stack alignItems={"center"} gap={20}>
           <Stack alignItems={"center"} gap={3}>
             <Text fontWeight={"semibold"} textStyle={"4xl"} color={"black"}>

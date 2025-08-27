@@ -20,7 +20,7 @@ import PersonalizeCard from "./components/PersonalizeCard";
 import ObjectivePlanningCard from "./components/ObjectivePlanningCard";
 import Footer from "./components/Footer";
 import MakesUnique from "./components/MakesUnique";
-import SubscriptionCard from "./components/SubscriptionCard";
+import SubscriptionSection from "./components/SubscriptionSection";
 
 function App() {
   return (
@@ -160,6 +160,7 @@ function App() {
         </Stack>
         <MakesUnique />
       </Container>
+      <SubscriptionSection />
       <Footer />
     </>
   );

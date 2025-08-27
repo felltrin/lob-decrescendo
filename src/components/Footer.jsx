@@ -23,7 +23,7 @@ const Footer = () => {
                   width={32}
                   height={32}
                 />
-                <Text fontSize={"28px"} color={"black"} fontWeight={"bold"}>
+                <Text fontSize={"34px"} color={"black"} fontWeight={"bold"}>
                   Dashvibe
                 </Text>
               </Flex>

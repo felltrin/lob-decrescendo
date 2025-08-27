@@ -7,12 +7,10 @@ import {
   Icon,
   Image,
   Theme,
-  Card,
 } from "@chakra-ui/react";
 import { ChevronRight, Star } from "lucide-react";
 import Navbar from "./components/Navbar";
 import SolutionCard from "./components/SolutionCard";
-import Demo from "./components/Demo";
 import LiveBudgetCard from "./components/LiveBudgetCard";
 import RevenueExpenseCard from "./components/RevenueExpenseCard";
 import SalesCard from "./components/SalesCard";
@@ -163,7 +161,51 @@ function App() {
       </Container>
       <SubscriptionSection />
       <HearFromUsers />
+      <Theme appearance="light">
+        <Container maxW={"full"} bg={"#f6faff"}>
+          <Flex
+            minH={"70vh"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            gap={14}
+          >
+            <Stack alignItems={"baseline"} gap={6}>
+              <Flex maxW={"700px"}>
+                <Text fontWeight={"bold"} textStyle={"5xl"}>
+                  Ready to revolutionize your financial operations with
+                  Dashvibe?
+                </Text>
+              </Flex>
 
+              <Text textStyle={"2xl"} color={"gray.400"} maxW={"500px"}>
+                Get started with Dashvibe today and feel the change!
+              </Text>
+              <Flex alignItems={"center"} justifyContent={"center"}>
+                <Button
+                  bg={"#b9eb8e"}
+                  color={"white"}
+                  _hover={{ bg: "#e04e2c" }}
+                  display={{ base: "none", md: "block" }}
+                >
+                  Try Free for 14 Days
+                  <Icon size={"lg"}>
+                    <ChevronRight />
+                  </Icon>
+                </Button>
+              </Flex>
+            </Stack>
+            <Flex>
+              <Image
+                src="/call-to-action-screen.png"
+                alt="CTA Screenshot"
+                rounded={"3xl"}
+                width={700}
+                height={500}
+              />
+            </Flex>
+          </Flex>
+        </Container>
+      </Theme>
       <Footer />
     </>
   );
